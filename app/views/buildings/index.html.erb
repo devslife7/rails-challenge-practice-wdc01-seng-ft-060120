@@ -1,0 +1,7 @@
+<h1>Buildings List</h1>
+
+<ul>
+    <% @buildings.each do |building| %>
+        <li style="font-size: 20px"><%= link_to building.name, building_path(building.id) %></li><br>
+    <% end %>
+</ul>

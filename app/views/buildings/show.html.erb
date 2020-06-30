@@ -1,0 +1,16 @@
+<h1>Building#show</h1>
+
+<div>
+    <div>Name: <%= @building.name %></div>
+    <div>Country: <%= @building.country %></div>
+    <div>Address: <%= @building.address %></div>
+    <div>Rent Per Floor: <%= @building.rent_per_floor %></div>
+    <div>Total Number of Floors: <%= @building.number_of_floors %></div>
+    <div>Total Rent Collected From all the Companies: <%= @building.total_rent %>
+    <div>Companies with offices:</div>
+    <ul>
+        <% @building.companies.each do |company| %>
+            <li><%= company.name %></li>
+        <% end %>
+    </ul>
+</div>
