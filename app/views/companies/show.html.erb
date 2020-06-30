@@ -1,0 +1,10 @@
+<h1>Company Details</h1>
+
+<div>Name: <%= @company.name %></div>
+
+<div>Buildings:</div>
+<ul>
+    <% @company.buildings.each do |company| %>
+        <li><%= company.name %></li>
+    <% end %>
+</ul>
