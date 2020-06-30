@@ -16,7 +16,13 @@ weworks = [
    address: "85 Broadway",
    rent_per_floor: 25000,
    number_of_floors: 6
-  }
+  },
+  {name: "Building 4", 
+   country: "UAE", 
+   address: "132 Finsbury Pavement",
+   rent_per_floor: 18001,
+   number_of_floors: 9
+  } 
 ]
 
 weworks.each do |we|
