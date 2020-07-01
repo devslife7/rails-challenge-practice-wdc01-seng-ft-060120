@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
       # byebug
       offices = value["offices"].drop_while {|entry| entry == ""}
 
-      offices.each do |floor|
+      office.each do |floor|
         # byebug
         Office.create(building_id: value["id"].to_i, company_id: @company.id, floor: floor.to_i)
       end

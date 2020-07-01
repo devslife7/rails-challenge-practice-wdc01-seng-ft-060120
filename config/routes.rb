@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :buildings, only: [:index, :show, :edit, :update]
   resources :companies, only: [:new, :create, :index, :show]
+  resources :employees, only: [:new, :create]
 
 end

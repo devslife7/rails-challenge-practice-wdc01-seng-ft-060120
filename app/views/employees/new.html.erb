@@ -1,0 +1,10 @@
+<h1>Create new employee</h1>
+<%= form_for @employee do |f| %>
+  <%= hidden_field_tag "company_id", @employee.company_id%> 
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit%>
+<%end%>

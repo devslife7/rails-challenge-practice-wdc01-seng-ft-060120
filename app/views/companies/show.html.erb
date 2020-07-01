@@ -4,7 +4,26 @@
 
 <div>Buildings:</div>
 <ul>
-    <% @company.buildings.each do |company| %>
-        <li><%= company.name %></li>
+  <% unless @company.buildings.empty? %>
+    <% @company.buildings.uniq.each do |building| %>
+      <li><%= building.name %></li>
+      <% building.offices.each do |office| %>
+        <% if office.company_id == @company.id%>
+          <div style="text-indent: 20px">Floor: <%= office.floor.to_s %></div>
+        <% end %>
+      <% end %>
     <% end %>
+
+  <% else %>
+    <li> This company has no buildings to display.</li>
+  <% end %>
+  <br>
+  <h2><%= "Employees of #{@company.name}" %></h2>
+  <% @company.employees.each do |employee| %>
+    <%= employee.name %><br>
+  <% end %>
+    <%= button_to "Back", companies_path, method: :get %>
+    <%= button_to "Add employee", new_employee_path, method: :get, params: {company_id: @company.id}%>
 </ul>
+
+
